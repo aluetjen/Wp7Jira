@@ -1,0 +1,16 @@
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Aluetjen.Jira.Contexts.Import.dll
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Aluetjen.Jira.Contexts.Import.pdb
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\obj\Debug\Aluetjen.Jira.Contexts.Import.dll
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\obj\Debug\Aluetjen.Jira.Contexts.Import.pdb
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Aluetjen.Infrastructure.dll
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Aluetjen.Jira.Contexts.dll
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Funq.dll
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Newtonsoft.Json.dll
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Aluetjen.Infrastructure.pdb
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Aluetjen.Jira.Contexts.pdb
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Funq.xml
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Newtonsoft.Json.pdb
+C:\Dev\Aluetjen.ConfluenceUpdates\Aluetjen.Jira.Import\Bin\Debug\Newtonsoft.Json.xml

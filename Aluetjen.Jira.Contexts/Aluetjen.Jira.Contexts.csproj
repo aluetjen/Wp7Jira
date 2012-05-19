@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF98314C-3FCF-4AEB-AFAF-7EF08C6F4358}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aluetjen.Jira.Contexts</RootNamespace>
+    <AssemblyName>Aluetjen.Jira.Contexts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Funq, Version=1.0.0.0, Culture=neutral, PublicKeyToken=95c13cd3fe8e976a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Import\Domain\Sagas\SyncProjectSaga.cs" />
+    <Compile Include="Import\Domain\SignInCommand.cs" />
+    <Compile Include="Import\Domain\SignInHandler.cs" />
+    <Compile Include="Import\Domain\SyncHandler.cs" />
+    <Compile Include="Import\Domain\SyncNewlyDiscoveredProjectsByDefaultHandler.cs" />
+    <Compile Include="Import\Domain\SyncProjectHandler.cs" />
+    <Compile Include="Import\Events\DiscoveredNewProjectEvent.cs" />
+    <Compile Include="Import\Events\IssueUpdatedEvent.cs" />
+    <Compile Include="Import\Events\LoggedInEvent.cs" />
+    <Compile Include="Import\Events\LoginFailedEvent.cs" />
+    <Compile Include="Import\Events\ProjectsDiscoveredEvent.cs" />
+    <Compile Include="Import\Events\UnauthorizedNotLoggedInEvent.cs" />
+    <Compile Include="Import\Gateway\Jira\IJiraService.cs" />
+    <Compile Include="Import\Gateway\Jira\JiraService.cs" />
+    <Compile Include="Import\Gateway\Jira\Project.cs" />
+    <Compile Include="Import\Gateway\Jira\SearchResult.cs" />
+    <Compile Include="Import\Gateway\Jira\SearchResultIssue.cs" />
+    <Compile Include="Import\Gateway\Jira\SearchResultIssueField.cs" />
+    <Compile Include="Import\Gateway\Scheduler\IScheduler.cs" />
+    <Compile Include="Import\Gateway\Scheduler\Scheduler.cs" />
+    <Compile Include="Import\Module.cs" />
+    <Compile Include="Import\ViewModel\Profile.cs" />
+    <Compile Include="Import\ViewModel\ProfileLoggedInEventHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicEvents\ApplicationLoadedEvent.cs" />
+    <Compile Include="PublicEvents\TestModeActivatedEvent.cs" />
+    <Compile Include="Review\Domain\ClearCacheHandler.cs" />
+    <Compile Include="Review\Module.cs" />
+    <Compile Include="Review\ViewModel\AllIssues.cs" />
+    <Compile Include="Review\ViewModel\Comment.cs" />
+    <Compile Include="Review\ViewModel\Issue.cs" />
+    <Compile Include="Review\ViewModel\IssueIssueUpdatedHandler.cs" />
+    <Compile Include="Review\ViewModel\IssueNewActivityHandler.cs" />
+    <Compile Include="Settings\ActivateHandler.cs" />
+    <Compile Include="Settings\ClearCacheHandler.cs" />
+    <Compile Include="Settings\Events\ActivateCommand.cs" />
+    <Compile Include="Settings\Events\ClearCacheCommand.cs" />
+    <Compile Include="Tracking\ActivityNewActivityHandler.cs" />
+    <Compile Include="Tracking\Documents\Activity.cs" />
+    <Compile Include="Tracking\Documents\RecentActivities.cs" />
+    <Compile Include="Tracking\Events\NewActivityEvent.cs" />
+    <Compile Include="Tracking\TestModeActivatedHandler.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Aluetjen.Infrastructure\Aluetjen.Infrastructure.csproj">
+      <Project>{522D8863-3F9A-44F4-97E9-D5CDEB508533}</Project>
+      <Name>Aluetjen.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

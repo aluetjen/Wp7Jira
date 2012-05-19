@@ -1,0 +1,9 @@
+﻿<local:AllIssues xmlns:local="clr-namespace:Aluetjen.Jira.Contexts.Review.Mvvm.ViewModel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <local:AllIssues.Issues>
+    <local:Issue Key="TX-1245" Summary="Summary 1" />
+    <local:Issue Key="TX-1246" Summary="Summary 2" />
+    <local:Issue Key="TX-1247" Summary="Summary 3" />
+    </local:AllIssues.Issues>
+</local:AllIssues>
