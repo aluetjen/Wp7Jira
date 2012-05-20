@@ -21,7 +21,7 @@
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
       <ExtendedTask Name="BackgroundTask">
-        <BackgroundServiceAgent Specifier="ScheduledTaskAgent" Name="Aluetjen.JiraSync" Source="Aluetjen.JiraSync" Type="Aluetjen.JiraSync.ScheduledAgent" />
+        <BackgroundServiceAgent Specifier="ScheduledTaskAgent" Name="Groom" Source="Aluetjen.JiraSync" Type="Aluetjen.JiraSync.ScheduledAgent" />
       </ExtendedTask>
     </Tasks>
     <Tokens>
@@ -29,7 +29,7 @@
         <TemplateType5>
           <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
           <Count>0</Count>
-          <Title>Aluetjen.Jira</Title>
+          <Title>Grooming</Title>
         </TemplateType5>
       </PrimaryToken>
     </Tokens>

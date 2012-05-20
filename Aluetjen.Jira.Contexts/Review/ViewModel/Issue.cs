@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Aluetjen.Jira.Contexts.Review.Mvvm.ViewModel
+namespace Aluetjen.Jira.Contexts.Review.ViewModel
 {
     public class Issue : IDocument
     {

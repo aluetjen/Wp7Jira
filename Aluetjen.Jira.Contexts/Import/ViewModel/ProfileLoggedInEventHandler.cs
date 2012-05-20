@@ -1,7 +1,7 @@
 ﻿using System;
 using Aluetjen.Jira.Contexts.Import.Events;
 
-namespace Aluetjen.Jira.Contexts.Import.Mvvm.ViewModel
+namespace Aluetjen.Jira.Contexts.Import.ViewModel
 {
     public class ProfileLoggedInEventHandler : IHandleMessages<LoggedInEvent>
     {

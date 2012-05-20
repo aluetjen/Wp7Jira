@@ -42,6 +42,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Funq, Version=1.0.0.0, Culture=neutral, PublicKeyToken=95c13cd3fe8e976a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -51,6 +52,7 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
     <Compile Include="ScheduledAgent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +60,10 @@
     <ProjectReference Include="..\Aluetjen.Infrastructure\Aluetjen.Infrastructure.csproj">
       <Project>{522D8863-3F9A-44F4-97E9-D5CDEB508533}</Project>
       <Name>Aluetjen.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aluetjen.Jira.Contexts\Aluetjen.Jira.Contexts.csproj">
+      <Project>{AF98314C-3FCF-4AEB-AFAF-7EF08C6F4358}</Project>
+      <Name>Aluetjen.Jira.Contexts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

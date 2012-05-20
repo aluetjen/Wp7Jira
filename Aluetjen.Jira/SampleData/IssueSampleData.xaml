@@ -1,12 +1,11 @@
 ﻿<Documents:Issue 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:Documents="clr-namespace:Aluetjen.Jira.Contexts.Review.Mvvm.ViewModel" Key="CA-2078"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Key="AC-2078"
     x:Class="Aluetjen.Jira.SampleData.c__dev_aluetjen_confluenceupdates_aluetjen_jira_sampledata_issuesampledata_xaml">
     
     <Documents:Issue.Comments>
-      <Documents:Comment PostedOn="10.10.2011" User="Brian Simmons" Description="For anyone else who's interested, the concept of the administrative channel is mentioned just after the 35 minute mark in the video. The video then goes on to walk through the gateway demo and answer some questions from the audience. Thanks Andreas."/>
-      <Documents:Comment PostedOn="10.10.2011" User="Francisca Gutierrez" Description="For anyone else who's interested, the concept of the administrative channel is mentioned just after the 35 minute mark in the video. The video then goes on to walk through the gateway demo and answer some questions from the audience. Thanks Andreas."/>
+      <Documents:Comment PostedOn="10.10.2011" User="Brian Farmer" Description="For anyone else who's interested, the concept of the administrative channel is mentioned just after the 35 minute mark in the video. The video then goes on to walk through the gateway demo and answer some questions from the audience. Thanks Andreas."/>
+      <Documents:Comment PostedOn="10.10.2011" User="Francisca Ryan" Description="For anyone else who's interested, the concept of the administrative channel is mentioned just after the 35 minute mark in the video. The video then goes on to walk through the gateway demo and answer some questions from the audience. Thanks Andreas."/>
     </Documents:Issue.Comments>
     
 </Documents:Issue>

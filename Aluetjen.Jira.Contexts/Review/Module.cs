@@ -10,7 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Aluetjen.Jira.Contexts.Import.Domain;
 using Aluetjen.Jira.Contexts.Import.Events;
-using Aluetjen.Jira.Contexts.Review.Mvvm.ViewModel;
+using Aluetjen.Jira.Contexts.Review.ViewModel;
 using Aluetjen.Jira.Contexts.Tracking.Events;
 using Aluetjen.Jira.Infrastructure;
 using Funq;

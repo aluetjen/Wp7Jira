@@ -1,7 +1,6 @@
 using Aluetjen.Jira.Contexts.Import.Events;
-using Aluetjen.Jira.Infrastructure;
 
-namespace Aluetjen.Jira.Contexts.Review.Mvvm.ViewModel
+namespace Aluetjen.Jira.Contexts.Review.ViewModel
 {
     public class IssueIssueUpdatedHandler : IHandleMessages<IssueUpdatedEvent>
     {
@@ -9,11 +8,13 @@ namespace Aluetjen.Jira.Contexts.Review.Mvvm.ViewModel
 
         public void Handle(IssueUpdatedEvent message)
         {
-            var issue = new Issue
-                            {
-                                Key = message.Key,
-                                Summary = message.Summary
-                            };
+            Issue issue;
+            if (!Store.TryLoad(message.Key, out issue))
+            {
+                issue = new Issue {Key = message.Key};
+            }
+
+            issue.Summary = message.Summary;
 
             Store.Store(issue);
         }

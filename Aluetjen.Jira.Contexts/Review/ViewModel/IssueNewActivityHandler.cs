@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Aluetjen.Jira.Contexts.Tracking.Events;
 
-namespace Aluetjen.Jira.Contexts.Review.Mvvm.ViewModel
+namespace Aluetjen.Jira.Contexts.Review.ViewModel
 {
     public class ReviewNewActivityHandler : IHandleMessages<NewActivityEvent>
     {

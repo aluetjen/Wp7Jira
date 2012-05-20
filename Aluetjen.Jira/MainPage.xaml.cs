@@ -49,12 +49,7 @@ namespace Aluetjen.Jira
 
         private void ApplicationBarIconButton_Settings(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ActivitiesSettings.xaml", UriKind.Relative));
-        }
-
-        private void ActivitesListBox_Tap(object sender, GestureEventArgs e)
-        {
-            // NavigationService.Navigate(new Uri(string.Format("/IssueReviewPivotPage.xaml?key={0}", (IssuesListBox.SelectedItem as Activity).Key), UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Contexts/Import/Mvvm/SignInPage.xaml", UriKind.Relative));
         }
     }
 }

@@ -1,5 +1,12 @@
-﻿using System.Windows;
+﻿using System;
+using System.Linq;
+using System.Threading;
+using System.Windows;
+using Aluetjen.Jira.Contexts;
+using Aluetjen.Jira.Contexts.PublicEvents;
+using Funq;
 using Microsoft.Phone.Scheduler;
+using Microsoft.Phone.Shell;
 
 namespace Aluetjen.JiraSync
 {
@@ -44,7 +51,19 @@ namespace Aluetjen.JiraSync
         /// </remarks>
         protected override void OnInvoke(ScheduledTask task)
         {
-            //TODO: Add code to perform your task in background
+            Config.Configure();
+
+            var bus = Config.Container.Resolve<IBus>();
+
+            bus.Publish(new ApplicationLoadedEvent{IsAgent = true});
+            
+            var mainTile = ShellTile.ActiveTiles.First();
+            mainTile.Update(new StandardTileData
+            {
+                Count = 1
+            });
+
+            Thread.Sleep(TimeSpan.FromMinutes(5));
 
             NotifyComplete();
         }

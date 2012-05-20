@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aluetjen.Jira.Contexts.Import.Mvvm.ViewModel
+namespace Aluetjen.Jira.Contexts.Import.ViewModel
 {
     public class Profile : IDocument
     {

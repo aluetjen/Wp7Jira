@@ -1,4 +1,4 @@
-﻿using Aluetjen.Jira.Contexts.PublicEvents.TestMode;
+﻿using Aluetjen.Jira.Contexts.PublicEvents;
 using Aluetjen.Jira.Contexts.Settings.Events;
 using Aluetjen.Jira.Infrastructure;
 

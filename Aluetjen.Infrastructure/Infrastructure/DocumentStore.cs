@@ -22,12 +22,17 @@ namespace Aluetjen.Jira.Infrastructure
 
         public IEnumerable<T> LoadAll<T>() where T : IDocument
         {
-            string path = typeof (T).ToString();
+            return Keys<T>().Select(Load<T>);
+        }
+
+        public IEnumerable<string> Keys<T>()
+        {
+            string path = typeof(T).ToString();
             string searchPattern = string.Format("{0}\\*.*", path);
 
-            if (!_myStore.DirectoryExists(path)) return Enumerable.Empty<T>();
+            if (!_myStore.DirectoryExists(path)) return Enumerable.Empty<string>();
 
-            return _myStore.GetFileNames(searchPattern).Select(Load<T>);
+            return _myStore.GetFileNames(searchPattern);
         }
 
         public void DeleteAll<T>()
@@ -46,6 +51,15 @@ namespace Aluetjen.Jira.Infrastructure
             var path = GetPathFromKey<T>(key);
 
             return LoadFromFile<T>(path);
+        }
+
+        public bool TryLoad<T>(string key, out T value) where T : IDocument
+        {
+            value = default(T);
+            if (!Exists<T>(key)) return false;
+
+            value = Load<T>(key);
+            return true;
         }
 
         private static string GetPathFromKey<T>(string key) where T : IDocument

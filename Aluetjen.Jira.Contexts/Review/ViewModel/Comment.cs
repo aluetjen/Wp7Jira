@@ -1,6 +1,6 @@
 using System;
 
-namespace Aluetjen.Jira.Contexts.Review.Mvvm.ViewModel
+namespace Aluetjen.Jira.Contexts.Review.ViewModel
 {
     public class Comment
     {

@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using Aluetjen.Jira.Contexts.Import.Domain.Sagas;
 using Aluetjen.Jira.Contexts.Import.Events;
 using Aluetjen.Jira.Contexts.Import.Gateway;
+using Aluetjen.Jira.Contexts.Import.Gateway.Jira;
 using Aluetjen.Jira.Contexts.Import.Gateway.Scheduler;
 using Aluetjen.Jira.Infrastructure;
 
@@ -24,7 +25,6 @@ namespace Aluetjen.Jira.Contexts.Import.Domain
         public IDocumentStore Store { get; set; }
         
         public IJiraService Jira { get; set; }
-        public IScheduler Scheduler { get; set; }
 
         public void Handle(ProjectsDiscoveredEvent message)
         {
@@ -69,11 +69,6 @@ namespace Aluetjen.Jira.Contexts.Import.Domain
                                                                          });
                                                      }
                                                  });
-
-            if(!message.IsBackgroundAgentSync)
-            {
-                Scheduler.ScheduleSync();
-            }
         }
     }
 }

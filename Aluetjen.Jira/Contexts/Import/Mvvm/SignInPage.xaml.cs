@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using Aluetjen.Jira.Contexts.Import.Domain;
-using Aluetjen.Jira.Contexts.Import.Mvvm.ViewModel;
+using Aluetjen.Jira.Contexts.Import.ViewModel;
 using Aluetjen.Jira.Infrastructure;
 using Microsoft.Phone.Controls;
 

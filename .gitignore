@@ -1,2 +1,6 @@
 Bin/*
 obj/*
+*/Bin/Debug/*
+*/Bin/Release/*
+*/obj/*
+_ReSharper.*

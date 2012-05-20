@@ -24,7 +24,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;DEBUG_AGENT</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -62,6 +62,7 @@
     <Compile Include="Import\Domain\SyncProjectHandler.cs" />
     <Compile Include="Import\Events\DiscoveredNewProjectEvent.cs" />
     <Compile Include="Import\Events\IssueUpdatedEvent.cs" />
+    <Compile Include="Import\Events\JiraLostEvent.cs" />
     <Compile Include="Import\Events\LoggedInEvent.cs" />
     <Compile Include="Import\Events\LoginFailedEvent.cs" />
     <Compile Include="Import\Events\ProjectsDiscoveredEvent.cs" />

@@ -2,11 +2,12 @@
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Windows;
 using Aluetjen.Jira.Contexts.Import.Events;
-using Aluetjen.Jira.Contexts.Import.Mvvm.ViewModel;
+using Aluetjen.Jira.Contexts.Import.ViewModel;
 using Newtonsoft.Json;
 
-namespace Aluetjen.Jira.Contexts.Import.Gateway
+namespace Aluetjen.Jira.Contexts.Import.Gateway.Jira
 {
     public class JiraService : IJiraService
     {
@@ -35,7 +36,7 @@ namespace Aluetjen.Jira.Contexts.Import.Gateway
                                              }
                                              catch (Exception)
                                              {
-                                                 Bus.Publish(new LoginFailedEvent() );
+                                                 Bus.Publish(new JiraLostEvent());
                                              }
                                          }, null);
         }

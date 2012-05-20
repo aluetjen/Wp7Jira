@@ -33,7 +33,7 @@ namespace Aluetjen.Jira.Contexts.Import.Gateway.Scheduler
 
                 // If debugging is enabled, use LaunchForTest to launch the agent in one minute.
 #if(DEBUG_AGENT)
-    ScheduledActionService.LaunchForTest(periodicTaskName, TimeSpan.FromSeconds(60));
+    ScheduledActionService.LaunchForTest(TaskName, TimeSpan.FromSeconds(60));
 #endif
             }
             catch (InvalidOperationException exception)

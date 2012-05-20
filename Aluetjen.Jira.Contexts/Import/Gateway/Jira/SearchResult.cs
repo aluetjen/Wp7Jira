@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Aluetjen.Jira.Contexts.Import.Gateway
+namespace Aluetjen.Jira.Contexts.Import.Gateway.Jira
 {
     public class SearchResult
     {

@@ -11,7 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Aluetjen.Jira.Contexts;
-using Aluetjen.Jira.Contexts.PublicEvents.Infrastructure;
+using Aluetjen.Jira.Contexts.PublicEvents;
 using Aluetjen.Jira.Contexts.Settings.Events;
 using Aluetjen.Jira.Infrastructure;
 using Aluetjen.Jira.ViewModels;
@@ -90,6 +90,12 @@ namespace Aluetjen.Jira
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            var mainTile = ShellTile.ActiveTiles.First();
+            mainTile.Update(new StandardTileData
+            {
+                Count = 0
+            });
+
             Bus.Publish(new ActivateCommand());
         }
 
@@ -97,6 +103,12 @@ namespace Aluetjen.Jira
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            var mainTile = ShellTile.ActiveTiles.First();
+            mainTile.Update(new StandardTileData
+            {
+                Count = 0
+            });
+
             // Ensure that application state is restored appropriately
             if (!App.ViewModel.IsDataLoaded)
             {
