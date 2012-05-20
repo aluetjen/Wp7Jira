@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Aluetjen.Jira.Contexts.Review.ViewModel;
 using Aluetjen.Jira.Infrastructure;
+using Microsoft.Phone.Controls;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace Aluetjen.Jira.Contexts.Review.Mvvm
 {
-    public partial class IssueListControl : UserControl
+    public partial class IssueListControl
     {
         public IssueListControl()
         {
@@ -26,9 +18,12 @@ namespace Aluetjen.Jira.Contexts.Review.Mvvm
             DataContext = dataContext;
         }
 
-        private void IssuesListBox_Tap(object sender, GestureEventArgs e)
+        private void IssueListBox_Tap(object sender, GestureEventArgs e)
         {
-            throw new NotImplementedException();
+            var issue = IssueListBox.SelectedItem as Issue;
+
+            var frame = App.Current.RootVisual as PhoneApplicationFrame;
+            frame.Navigate(new Uri("/Contexts/Review/Mvvm/IssueReviewPivotPage.xaml?key=" + issue.Key, UriKind.Relative)); 
         }
     }
 }

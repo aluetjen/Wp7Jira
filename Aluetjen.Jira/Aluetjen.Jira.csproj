@@ -56,6 +56,7 @@
     <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
@@ -84,7 +85,7 @@
       <DependentUpon>IssueListControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Config.cs" />
-    <Compile Include="IssueReviewPivotPage.xaml.cs">
+    <Compile Include="Contexts\Review\Mvvm\IssueReviewPivotPage.xaml.cs">
       <DependentUpon>IssueReviewPivotPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="IssueSummaryControl.xaml.cs">
@@ -113,11 +114,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <DesignData Include="Contexts\Review\Mvvm\SampleData\IssueSampleData.xaml">
+    <DesignData Include="Contexts\Review\Mvvm\SampleData\AllIssuesSampleData.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
-    <Page Include="IssueReviewPivotPage.xaml">
+    <Page Include="Contexts\Review\Mvvm\IssueReviewPivotPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,7 +130,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <DesignData Include="SampleData\IssueSampleData.xaml">
+    <DesignData Include="Contexts\Review\Mvvm\SampleData\IssueSampleData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </DesignData>
@@ -243,7 +244,9 @@
     </Content>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="SampleData\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aluetjen.Infrastructure\Aluetjen.Infrastructure.csproj">
       <Project>{522D8863-3F9A-44F4-97E9-D5CDEB508533}</Project>

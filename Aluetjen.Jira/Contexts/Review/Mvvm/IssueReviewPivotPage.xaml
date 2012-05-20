@@ -8,13 +8,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
     x:Class="Aluetjen.Jira.IssueReviewPivotPage"
-    d:DataContext="{d:DesignData /SampleData/IssueSampleData.xaml}"
+    d:DataContext="{d:DesignData /Contexts/Review/Mvvm/SampleData/IssueSampleData.xaml}"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Style="{StaticResource TransitionPageStyle}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -23,7 +23,7 @@
             <!--Pivot item one-->
             <controls:PivotItem Header="{Binding Key}">
                 <StackPanel x:Name="SummaryLayoutRoot" Background="Black" Height="Auto" UseLayoutRounding="True">
-                    <TextBlock Height="Auto" x:Name="textBlock1" Text="As a business, when a customer orders product, then shipment must be prioritized" TextWrapping="Wrap" />
+                    <TextBlock Height="Auto" x:Name="textBlock1" Text="{Binding Summary}" TextWrapping="Wrap" />
                     <Grid Height="59" x:Name="grid1" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="0.3*"/>
@@ -37,7 +37,7 @@
                         </StackPanel>
                         <TextBlock Grid.Column="1" Margin="0" TextWrapping="Wrap" Text="Payments,Shipment" VerticalAlignment="Center" FontSize="13.333" TextAlignment="Center"/>
                     </Grid>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Segoe WP Light"><Span><Run Text="Although Silverlight provides all of the hooks for you to be able to animate elements across the screen when layout changes, the code needed to do this can be complex. Thankfully, the concept of Fluid UI, or mechanisms that make this type of animation easier, have been made available for you to use. By using Fluid UI components, you can spend more time on the design of your application with the same dynamic results during layout change. "/></Span><LineBreak/><Run Text=""/></TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Segoe WP Light"><Span><Run Text="{Binding Description}"/></Span><LineBreak/><Run Text=""/></TextBlock>
                 </StackPanel>
             </controls:PivotItem>
 
