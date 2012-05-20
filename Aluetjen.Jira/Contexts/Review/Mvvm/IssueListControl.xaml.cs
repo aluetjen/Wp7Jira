@@ -22,8 +22,11 @@ namespace Aluetjen.Jira.Contexts.Review.Mvvm
         {
             var issue = IssueListBox.SelectedItem as Issue;
 
-            var frame = App.Current.RootVisual as PhoneApplicationFrame;
-            frame.Navigate(new Uri("/Contexts/Review/Mvvm/IssueReviewPivotPage.xaml?key=" + issue.Key, UriKind.Relative)); 
+            if (issue != null)
+            {
+                var frame = App.Current.RootVisual as PhoneApplicationFrame;
+                frame.Navigate(new Uri("/Contexts/Review/Mvvm/IssueReviewPivotPage.xaml?key=" + issue.Key, UriKind.Relative));
+            }
         }
     }
 }

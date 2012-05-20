@@ -6,7 +6,6 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
     x:Class="Aluetjen.Jira.IssueReviewPivotPage"
     d:DataContext="{d:DesignData /Contexts/Review/Mvvm/SampleData/IssueSampleData.xaml}"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
@@ -19,7 +18,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Pivot Control-->
-        <controls:Pivot Title="MY APPLICATION">
+        <controls:Pivot Title="GROOMING">
             <!--Pivot item one-->
             <controls:PivotItem Header="{Binding Key}">
                 <StackPanel x:Name="SummaryLayoutRoot" Background="Black" Height="Auto" UseLayoutRounding="True">
