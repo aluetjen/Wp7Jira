@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 
-namespace Aluetjen.Jira.Contexts
+namespace Aluetjen.Infrastructure
 {
     public interface IDocumentStore
     {
         bool Exists<T>(string key);
         T Load<T>(string key) where T : IDocument;
         bool TryLoad<T>(string key, out T value) where T : IDocument;
+        T LoadOrCreate<T>(string key) where T : IDocument, new();
         void Store<T>(T document) where T : IDocument;
         IEnumerable<T> LoadAll<T>() where T : IDocument;
         void DeleteAll<T>();

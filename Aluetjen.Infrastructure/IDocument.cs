@@ -1,4 +1,4 @@
-namespace Aluetjen.Jira.Contexts
+namespace Aluetjen.Infrastructure
 {
     public interface IDocument
     {

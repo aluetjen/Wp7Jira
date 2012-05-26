@@ -1,4 +1,4 @@
-﻿using Aluetjen.Jira.Infrastructure;
+﻿using Aluetjen.Infrastructure;
 
 namespace Aluetjen.Jira.Contexts.Import.Events
 {

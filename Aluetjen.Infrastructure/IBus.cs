@@ -1,6 +1,4 @@
-using Aluetjen.Jira.Infrastructure;
-
-namespace Aluetjen.Jira.Contexts
+namespace Aluetjen.Infrastructure
 {
     public interface IBus
     {

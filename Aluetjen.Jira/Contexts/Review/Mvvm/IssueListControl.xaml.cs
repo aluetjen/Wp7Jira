@@ -1,4 +1,5 @@
 ﻿using System;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Review.ViewModel;
 using Aluetjen.Jira.Infrastructure;
 using Microsoft.Phone.Controls;
@@ -12,9 +13,14 @@ namespace Aluetjen.Jira.Contexts.Review.Mvvm
         {
             InitializeComponent();
 
-            var dataContext = new AllIssues{Store = Config.Container.Resolve<IDocumentStore>()};
+            Refresh();
+        }
+
+        public void Refresh()
+        {
+            var dataContext = new AllIssues { Store = Config.Container.Resolve<IDocumentStore>() };
             dataContext.Load();
-            
+
             DataContext = dataContext;
         }
 

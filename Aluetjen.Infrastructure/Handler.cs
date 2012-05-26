@@ -1,6 +1,4 @@
-using Aluetjen.Jira.Contexts;
-
-namespace Aluetjen.Jira.Infrastructure
+namespace Aluetjen.Infrastructure
 {
     public abstract class Handler
     {

@@ -1,6 +1,6 @@
-﻿using Aluetjen.Jira.Contexts.PublicEvents;
+﻿using Aluetjen.Infrastructure;
+using Aluetjen.Jira.Contexts.PublicEvents;
 using Aluetjen.Jira.Contexts.Settings.Events;
-using Aluetjen.Jira.Infrastructure;
 
 namespace Aluetjen.Jira.Contexts.Settings
 {

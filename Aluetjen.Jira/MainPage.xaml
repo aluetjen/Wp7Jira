@@ -20,7 +20,7 @@
         <controls:Pivot Title="GROOMING">
             <!--Pivot item one-->
             <controls:PivotItem Header="Issues">
-                <Mvvm:IssueListControl />
+                <Mvvm:IssueListControl x:Name="IssueList" />
             </controls:PivotItem>
             <controls:PivotItem Header="My JIRA">
             </controls:PivotItem>

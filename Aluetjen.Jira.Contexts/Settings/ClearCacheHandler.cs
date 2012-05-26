@@ -8,9 +8,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Settings.Events;
 using Aluetjen.Jira.Contexts.Tracking.Documents;
-using Aluetjen.Jira.Infrastructure;
 
 namespace Aluetjen.Jira.Contexts.Settings
 {

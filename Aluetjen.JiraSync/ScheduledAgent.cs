@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading;
 using System.Windows;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts;
 using Aluetjen.Jira.Contexts.PublicEvents;
 using Funq;

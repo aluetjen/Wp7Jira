@@ -1,6 +1,6 @@
 using System;
 
-namespace Aluetjen.Jira.Infrastructure
+namespace Aluetjen.Infrastructure
 {
     public class ConcurrencyException : Exception
     {

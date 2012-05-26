@@ -8,12 +8,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Import.Domain.Sagas;
 using Aluetjen.Jira.Contexts.Import.Events;
 using Aluetjen.Jira.Contexts.Import.Gateway;
 using Aluetjen.Jira.Contexts.Import.Gateway.Jira;
 using Aluetjen.Jira.Contexts.Import.Gateway.Scheduler;
-using Aluetjen.Jira.Infrastructure;
 
 namespace Aluetjen.Jira.Contexts.Import.Domain
 {

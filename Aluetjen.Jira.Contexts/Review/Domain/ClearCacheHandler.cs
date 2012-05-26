@@ -1,4 +1,5 @@
-﻿using Aluetjen.Jira.Contexts.Review.ViewModel;
+﻿using Aluetjen.Infrastructure;
+using Aluetjen.Jira.Contexts.Review.ViewModel;
 using Aluetjen.Jira.Contexts.Settings.Events;
 
 namespace Aluetjen.Jira.Contexts.Review.Domain

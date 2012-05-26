@@ -1,3 +1,4 @@
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Import.Events;
 
 namespace Aluetjen.Jira.Contexts.Review.ViewModel
@@ -8,11 +9,7 @@ namespace Aluetjen.Jira.Contexts.Review.ViewModel
 
         public void Handle(IssueUpdatedEvent message)
         {
-            Issue issue;
-            if (!Store.TryLoad(message.Key, out issue))
-            {
-                issue = new Issue {Key = message.Key};
-            }
+            var issue = Store.LoadOrCreate<Issue>(message.Key);
 
             issue.Summary = message.Summary;
 

@@ -8,11 +8,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Aluetjen.Infrastructure;
 
-namespace Aluetjen.Jira.Contexts.Import.Events
+namespace Aluetjen.Jira.Contexts.Import.Gateway.Os
 {
-    public class JiraLostEvent : Message
+    public class Network
     {
+        public bool HasWifi()
+        {
+            return true;
+        }
     }
 }

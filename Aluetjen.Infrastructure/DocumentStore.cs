@@ -1,16 +1,17 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
 using System.Linq;
-using Aluetjen.Jira.Contexts;
 using Newtonsoft.Json;
 
-namespace Aluetjen.Jira.Infrastructure
+namespace Aluetjen.Infrastructure
 {
     public class DocumentStore : IDocumentStore
     {
         // Obtain the virtual store for the application.
-        readonly IsolatedStorageFile _myStore = IsolatedStorageFile.GetUserStoreForApplication();
+        private readonly IsolatedStorageFile _myStore = IsolatedStorageFile.GetUserStoreForApplication();
+        private readonly Dictionary<string, WeakReference> _weakReferences = new Dictionary<string, WeakReference>();
 
         public bool Exists<T>(string key)
         {
@@ -62,6 +63,17 @@ namespace Aluetjen.Jira.Infrastructure
             return true;
         }
 
+        public T LoadOrCreate<T>(string key) where T : IDocument, new()
+        {
+            T document;
+            if(!TryLoad(key, out document))
+            {
+                document = new T {Key = key};
+            }
+
+            return document;
+        }
+
         private static string GetPathFromKey<T>(string key) where T : IDocument
         {
             string dir = typeof (T).ToString();
@@ -71,14 +83,49 @@ namespace Aluetjen.Jira.Infrastructure
 
         private T LoadFromFile<T>(string path) where T : IDocument
         {
+            T document;
+            if (TryGetFromCache(path, out document)) return document;
+
             using (var isoFileStream = new IsolatedStorageFileStream(path, FileMode.Open, _myStore))
             {
                 //Write the data
                 using (var isoFileWriter = new JsonTextReader(new StreamReader(isoFileStream)))
                 {
                     var json = new JsonSerializer();
-                    return json.Deserialize<T>(isoFileWriter);
+                    document = json.Deserialize<T>(isoFileWriter);
+
+                    Cache(path, document);
+
+                    return document;
                 }
+            }
+        }
+
+        private bool TryGetFromCache<T>(string path, out T document) where T : IDocument
+        {
+            document = default(T);
+
+            lock (_weakReferences)
+            {
+                WeakReference weakReference;
+                if (_weakReferences.TryGetValue(path, out weakReference))
+                {
+                    if (weakReference.IsAlive)
+                    {
+                        document = (T) weakReference.Target;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private void Cache<T>(string path, T document) where T : IDocument
+        {
+            lock (_weakReferences)
+            {
+                _weakReferences[path] = new WeakReference(document);
             }
         }
 
@@ -99,6 +146,8 @@ namespace Aluetjen.Jira.Infrastructure
                     json.Serialize(isoFileWriter, document);
                 }
             }
+
+            Cache(path, document);
         }
     }
 }

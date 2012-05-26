@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Aluetjen.Jira.Contexts;
+using System.Threading;
 using Funq;
 
-namespace Aluetjen.Jira.Infrastructure
+namespace Aluetjen.Infrastructure
 {
     public class Bus : IBus
     {
@@ -51,7 +51,8 @@ namespace Aluetjen.Jira.Infrastructure
             if (_handlerFactory.TryGetValue(typeof(T), out handler))
             {
                 message.PublishedOn = DateTime.UtcNow;
-                ((Action<T>)handler)(message);
+
+                ThreadPool.QueueUserWorkItem(x => ((Action<T>)handler)(message));
             }
         }
     }

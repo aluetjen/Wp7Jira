@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Import.Domain;
 using Aluetjen.Jira.Contexts.Import.Events;
 using Aluetjen.Jira.Contexts.Import.Gateway;

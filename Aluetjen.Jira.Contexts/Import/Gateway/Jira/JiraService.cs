@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Windows;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Import.Events;
 using Aluetjen.Jira.Contexts.Import.ViewModel;
 using Newtonsoft.Json;

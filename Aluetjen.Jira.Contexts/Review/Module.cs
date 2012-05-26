@@ -8,11 +8,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Import.Domain;
 using Aluetjen.Jira.Contexts.Import.Events;
 using Aluetjen.Jira.Contexts.Review.ViewModel;
 using Aluetjen.Jira.Contexts.Tracking.Events;
-using Aluetjen.Jira.Infrastructure;
 using Funq;
 
 namespace Aluetjen.Jira.Contexts.Review
@@ -22,12 +22,10 @@ namespace Aluetjen.Jira.Contexts.Review
         public static void Confiure(Container container)
         {
             container.Register(c => new IssueIssueUpdatedHandler {Store = c.Resolve<IDocumentStore>()});
-            container.Register(c => new ReviewNewActivityHandler {Store = c.Resolve<IDocumentStore>()});
 
             var bus = container.Resolve<IBus>();
 
             bus.RegisterHandler<IssueIssueUpdatedHandler, IssueUpdatedEvent>();
-            bus.RegisterHandler<ReviewNewActivityHandler, NewActivityEvent>();
         }
     }
 }

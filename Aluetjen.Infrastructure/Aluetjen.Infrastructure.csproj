@@ -59,11 +59,11 @@
     <Compile Include="IDocument.cs" />
     <Compile Include="IDocumentStore.cs" />
     <Compile Include="IHandleMessages.cs" />
-    <Compile Include="Infrastructure\Bus.cs" />
-    <Compile Include="Infrastructure\ConcurrencyException.cs" />
-    <Compile Include="Infrastructure\DocumentStore.cs" />
-    <Compile Include="Infrastructure\Handler.cs" />
-    <Compile Include="Infrastructure\Message.cs" />
+    <Compile Include="Bus.cs" />
+    <Compile Include="ConcurrencyException.cs" />
+    <Compile Include="DocumentStore.cs" />
+    <Compile Include="Handler.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

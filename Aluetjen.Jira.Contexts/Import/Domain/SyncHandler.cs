@@ -1,4 +1,5 @@
 ﻿using System;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Import.Events;
 using Aluetjen.Jira.Contexts.Import.Gateway.Jira;
 using Aluetjen.Jira.Contexts.Import.Gateway.Scheduler;

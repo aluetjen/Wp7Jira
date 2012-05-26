@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts;
 using Aluetjen.Jira.Contexts.PublicEvents;
 using Aluetjen.Jira.Contexts.Settings.Events;

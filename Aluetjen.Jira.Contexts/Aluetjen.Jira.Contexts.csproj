@@ -75,6 +75,7 @@
     <Compile Include="Import\Gateway\Jira\SearchResultIssueField.cs" />
     <Compile Include="Import\Gateway\Scheduler\IScheduler.cs" />
     <Compile Include="Import\Gateway\Scheduler\Scheduler.cs" />
+    <Compile Include="Import\Gateway\Os\Network.cs" />
     <Compile Include="Import\Module.cs" />
     <Compile Include="Import\ViewModel\Profile.cs" />
     <Compile Include="Import\ViewModel\ProfileLoggedInEventHandler.cs" />
@@ -87,7 +88,6 @@
     <Compile Include="Review\ViewModel\Comment.cs" />
     <Compile Include="Review\ViewModel\Issue.cs" />
     <Compile Include="Review\ViewModel\IssueIssueUpdatedHandler.cs" />
-    <Compile Include="Review\ViewModel\IssueNewActivityHandler.cs" />
     <Compile Include="Settings\ActivateHandler.cs" />
     <Compile Include="Settings\ClearCacheHandler.cs" />
     <Compile Include="Settings\Events\ActivateCommand.cs" />

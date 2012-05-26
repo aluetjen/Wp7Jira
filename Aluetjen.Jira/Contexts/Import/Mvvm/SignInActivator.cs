@@ -8,6 +8,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Import.Events;
 using Microsoft.Phone.Controls;
 
@@ -19,7 +21,8 @@ namespace Aluetjen.Jira.Contexts.Import.Mvvm
 
         public void Handle(UnauthorizedNotLoggedInEvent message)
         {
-            RootFrame.Navigate(new Uri("/Contexts/Import/Mvvm/SignInPage.xaml", UriKind.Relative));
+            Deployment.Current.Dispatcher.BeginInvoke(
+                () => RootFrame.Navigate(new Uri("/Contexts/Import/Mvvm/SignInPage.xaml", UriKind.Relative)));
         }
     }
 }

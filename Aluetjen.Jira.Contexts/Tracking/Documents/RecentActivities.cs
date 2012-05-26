@@ -9,7 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Aluetjen.Jira.Infrastructure;
+using Aluetjen.Infrastructure;
 
 namespace Aluetjen.Jira.Contexts.Tracking.Documents
 {

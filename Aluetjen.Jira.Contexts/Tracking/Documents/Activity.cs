@@ -1,5 +1,5 @@
 ﻿using System;
-using Aluetjen.Jira.Infrastructure;
+using Aluetjen.Infrastructure;
 
 namespace Aluetjen.Jira.Contexts.Tracking.Documents
 {

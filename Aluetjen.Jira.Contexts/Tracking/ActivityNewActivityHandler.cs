@@ -1,6 +1,6 @@
-﻿using Aluetjen.Jira.Contexts.Tracking.Documents;
+﻿using Aluetjen.Infrastructure;
+using Aluetjen.Jira.Contexts.Tracking.Documents;
 using Aluetjen.Jira.Contexts.Tracking.Events;
-using Aluetjen.Jira.Infrastructure;
 
 namespace Aluetjen.Jira.Contexts.Tracking
 {

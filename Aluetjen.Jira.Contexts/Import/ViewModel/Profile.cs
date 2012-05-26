@@ -1,4 +1,5 @@
 ﻿using System;
+using Aluetjen.Infrastructure;
 
 namespace Aluetjen.Jira.Contexts.Import.ViewModel
 {
