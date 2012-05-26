@@ -1,15 +1,16 @@
-﻿<Documents:Issue 
+﻿<Query:Issue 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Documents="clr-namespace:Aluetjen.Jira.Contexts.Review.ViewModel;assembly=Aluetjen.Jira.Contexts"
+    xmlns:Query="clr-namespace:Aluetjen.Jira.Contexts.Review.Query;assembly=Aluetjen.Jira.Contexts"
     x:Class="Aluetjen.Jira.SampleData.c__dev_aluetjen_confluenceupdates_aluetjen_jira_sampledata_issuesampledata_xaml"
     Key="AC-2078"
     Summary="Thanks for choosing JIRA. Welcome to JIRA — the easy way to help your team track and deliver projects. Where do I start?"
     Description="Rund 130.000 ausländische Soldaten der NATO-geführten ISAF-Truppe sind derzeit in Afghanistan und sollen zu einem Großteil bis Ende 2014 schrittweise heimkehren. Doch es geht auch um Geländewagen, Panzer und Helikopter - sowie um Computer, Küchengeschirr, Betten oder Billiardtische. Ein ranghoher NATO-Vertreter schätzt allein den Wert des für den Einsatz am Hindukusch erforderlichen Kriegsgeräts auf knapp 23 Milliarden Euro: All unsere Ausrüstung und die Soldaten von dort abzutransportieren, wird eine Weile brauchen.">
     
-    <Documents:Issue.Comments>
+    <Query:Issue.Comments>
       <Documents:Comment PostedOn="10.10.2011" User="Brian Farmer" Description="For anyone else who's interested, the concept of the administrative channel is mentioned just after the 35 minute mark in the video. The video then goes on to walk through the gateway demo and answer some questions from the audience. Thanks Andreas."/>
       <Documents:Comment PostedOn="10.10.2011" User="Francisca Ryan" Description="For anyone else who's interested, the concept of the administrative channel is mentioned just after the 35 minute mark in the video. The video then goes on to walk through the gateway demo and answer some questions from the audience. Thanks Andreas."/>
-    </Documents:Issue.Comments>
+    </Query:Issue.Comments>
     
-</Documents:Issue>
+</Query:Issue>

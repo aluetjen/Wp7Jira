@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Import\Domain\ResyncCommand.cs" />
     <Compile Include="Import\Domain\Sagas\SyncProjectSaga.cs" />
     <Compile Include="Import\Domain\SignInCommand.cs" />
     <Compile Include="Import\Domain\SignInHandler.cs" />
@@ -82,12 +83,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicEvents\ApplicationLoadedEvent.cs" />
     <Compile Include="PublicEvents\TestModeActivatedEvent.cs" />
-    <Compile Include="Review\Domain\ClearCacheHandler.cs" />
+    <Compile Include="Review\Command\ClearCacheHandler.cs" />
     <Compile Include="Review\Module.cs" />
-    <Compile Include="Review\ViewModel\AllIssues.cs" />
-    <Compile Include="Review\ViewModel\Comment.cs" />
-    <Compile Include="Review\ViewModel\Issue.cs" />
-    <Compile Include="Review\ViewModel\IssueIssueUpdatedHandler.cs" />
+    <Compile Include="Review\ViewModel\AllIssuesViewModel.cs" />
+    <Compile Include="Review\Query\Comment.cs" />
+    <Compile Include="Review\Query\Issue.cs" />
+    <Compile Include="Review\Query\IssueIssueUpdatedHandler.cs" />
     <Compile Include="Settings\ActivateHandler.cs" />
     <Compile Include="Settings\ClearCacheHandler.cs" />
     <Compile Include="Settings\Events\ActivateCommand.cs" />

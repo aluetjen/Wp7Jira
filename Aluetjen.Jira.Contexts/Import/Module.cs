@@ -41,6 +41,7 @@ namespace Aluetjen.Jira.Contexts.Import
             bus.RegisterHandler<SyncHandler, ApplicationLoadedEvent>();
             bus.RegisterHandler<ProfileLoggedInEventHandler, LoggedInEvent>();
             bus.RegisterHandler<SyncHandler, LoggedInEvent>();
+            bus.RegisterHandler<SyncHandler, ResyncCommand>();
             bus.RegisterHandler<SyncProjectHandler, ProjectsDiscoveredEvent>();
             bus.RegisterHandler<SyncProjectHandler, SyncProjectCommand>();
             bus.RegisterHandler<SyncNewlyDiscoveredProjectsByDefaultHandler, DiscoveredNewProjectEvent>();

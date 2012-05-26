@@ -1,5 +1,6 @@
 using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Import.Events;
+using Aluetjen.Jira.Contexts.Review.Query;
 
 namespace Aluetjen.Jira.Contexts.Review.ViewModel
 {

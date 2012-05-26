@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts;
+using Aluetjen.Jira.Contexts.Import.Domain;
 using Aluetjen.Jira.Contexts.Settings.Events;
 using Aluetjen.Jira.Contexts.Tracking.Documents;
 using Aluetjen.Jira.Infrastructure;
@@ -45,7 +46,7 @@ namespace Aluetjen.Jira
 
         private void ApplicationBarIconButton_Refresh(object sender, EventArgs e)
         {
-            IssueList.Refresh();
+            Bus.Publish(new ResyncCommand());
         }
 
         private void ApplicationBarIconButton_Settings(object sender, EventArgs e)

@@ -1,9 +1,10 @@
 ﻿<local:AllIssues xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:Aluetjen.Jira.Contexts.Review.ViewModel;assembly=Aluetjen.Jira.Contexts">
+    xmlns:local="clr-namespace:Aluetjen.Jira.Contexts.Review.ViewModel;assembly=Aluetjen.Jira.Contexts"
+                 xmlns:Query="clr-namespace:Aluetjen.Jira.Contexts.Review.Query;assembly=Aluetjen.Jira.Contexts">
     <local:AllIssues.Issues>
-    <local:Issue Key="TX-1245" Summary="Summary 1" />
-        <local:Issue Key="TX-1246" Summary="Ms O'Neill's 21-year-old sister, who was seriously injured in the shooting, remains in a critical condition at the Royal Victoria Hospital in Belfast." />
-    <local:Issue Key="TX-1247" Summary="Summary 3" />
+    <Query:Issue Key="TX-1245" Summary="Summary 1" />
+        <Query:Issue Key="TX-1246" Summary="Ms O'Neill's 21-year-old sister, who was seriously injured in the shooting, remains in a critical condition at the Royal Victoria Hospital in Belfast." />
+    <Query:Issue Key="TX-1247" Summary="Summary 3" />
     </local:AllIssues.Issues>
 </local:AllIssues>

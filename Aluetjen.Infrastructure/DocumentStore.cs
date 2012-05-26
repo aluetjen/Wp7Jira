@@ -12,6 +12,12 @@ namespace Aluetjen.Infrastructure
         // Obtain the virtual store for the application.
         private readonly IsolatedStorageFile _myStore = IsolatedStorageFile.GetUserStoreForApplication();
         private readonly Dictionary<string, WeakReference> _weakReferences = new Dictionary<string, WeakReference>();
+        private readonly object _sync = new object();
+
+        public object SyncRoot
+        {
+            get { return _sync; }
+        }
 
         public bool Exists<T>(string key)
         {
@@ -65,13 +71,16 @@ namespace Aluetjen.Infrastructure
 
         public T LoadOrCreate<T>(string key) where T : IDocument, new()
         {
-            T document;
-            if(!TryLoad(key, out document))
+            lock (SyncRoot)
             {
-                document = new T {Key = key};
-            }
+                T document;
+                if (!TryLoad(key, out document))
+                {
+                    document = new T {Key = key};
+                }
 
-            return document;
+                return document;
+            }
         }
 
         private static string GetPathFromKey<T>(string key) where T : IDocument
@@ -86,17 +95,20 @@ namespace Aluetjen.Infrastructure
             T document;
             if (TryGetFromCache(path, out document)) return document;
 
-            using (var isoFileStream = new IsolatedStorageFileStream(path, FileMode.Open, _myStore))
+            lock (SyncRoot)
             {
-                //Write the data
-                using (var isoFileWriter = new JsonTextReader(new StreamReader(isoFileStream)))
+                using (var isoFileStream = new IsolatedStorageFileStream(path, FileMode.Open, _myStore))
                 {
-                    var json = new JsonSerializer();
-                    document = json.Deserialize<T>(isoFileWriter);
+                    //Write the data
+                    using (var isoFileWriter = new JsonTextReader(new StreamReader(isoFileStream)))
+                    {
+                        var json = new JsonSerializer();
+                        document = json.Deserialize<T>(isoFileWriter);
 
-                    Cache(path, document);
+                        Cache(path, document);
 
-                    return document;
+                        return document;
+                    }
                 }
             }
         }
@@ -131,23 +143,26 @@ namespace Aluetjen.Infrastructure
 
         public void Store<T>(T document) where T : IDocument
         {
-            string dir = typeof (T).ToString();
-            string path = Path.Combine(dir, document.Key);
-
-            _myStore.CreateDirectory(dir);
-
-            // Specify the file path and options.
-            using (var isoFileStream = new IsolatedStorageFileStream(path, FileMode.OpenOrCreate, _myStore))
+            lock (SyncRoot)
             {
-                //Write the data
-                using (var isoFileWriter = new StreamWriter(isoFileStream))
-                {
-                    var json = new JsonSerializer();
-                    json.Serialize(isoFileWriter, document);
-                }
-            }
+                string dir = typeof (T).ToString();
+                string path = Path.Combine(dir, document.Key);
 
-            Cache(path, document);
+                _myStore.CreateDirectory(dir);
+
+                // Specify the file path and options.
+                using (var isoFileStream = new IsolatedStorageFileStream(path, FileMode.OpenOrCreate, _myStore))
+                {
+                    //Write the data
+                    using (var isoFileWriter = new StreamWriter(isoFileStream))
+                    {
+                        var json = new JsonSerializer();
+                        json.Serialize(isoFileWriter, document);
+                    }
+                }
+
+                Cache(path, document);
+            }
         }
     }
 }

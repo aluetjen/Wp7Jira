@@ -1,4 +1,5 @@
 ﻿using Aluetjen.Infrastructure;
+using Aluetjen.Jira.Contexts.Review.Query;
 using Aluetjen.Jira.Contexts.Review.ViewModel;
 using Aluetjen.Jira.Contexts.Settings.Events;
 

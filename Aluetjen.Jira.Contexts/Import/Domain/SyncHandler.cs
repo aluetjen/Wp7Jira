@@ -7,7 +7,7 @@ using Aluetjen.Jira.Contexts.PublicEvents;
 
 namespace Aluetjen.Jira.Contexts.Import.Domain
 {
-    public class SyncHandler : IHandleMessages<ApplicationLoadedEvent>, IHandleMessages<LoggedInEvent>
+    public class SyncHandler : IHandleMessages<ApplicationLoadedEvent>, IHandleMessages<LoggedInEvent>, IHandleMessages<ResyncCommand>
     {
         public IJiraService Jira { get; set; }
         public IScheduler Scheduler { get; set; }
@@ -25,6 +25,11 @@ namespace Aluetjen.Jira.Contexts.Import.Domain
         }
 
         public void Handle(LoggedInEvent message)
+        {
+            DiscoverProjects();
+        }
+
+        public void Handle(ResyncCommand message)
         {
             DiscoverProjects();
         }

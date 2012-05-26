@@ -22,10 +22,12 @@ namespace Aluetjen.Jira.Contexts.Review
         public static void Confiure(Container container)
         {
             container.Register(c => new IssueIssueUpdatedHandler {Store = c.Resolve<IDocumentStore>()});
+            container.Register(c => new AllIssuesViewModel {Store = c.Resolve<IDocumentStore>()});
 
             var bus = container.Resolve<IBus>();
 
             bus.RegisterHandler<IssueIssueUpdatedHandler, IssueUpdatedEvent>();
+            bus.RegisterHandler<AllIssuesViewModel, IssueUpdatedEvent>();
         }
     }
 }
