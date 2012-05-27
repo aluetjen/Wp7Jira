@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Aluetjen.Jira.Contexts.Import.Mvvm.ProjectsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480"
+    d:DataContext="{d:DesignData /Contexts/Import/Mvvm/SampleData/ProjectsSampleData.xaml}">
+
+    <StackPanel x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+        <ItemsControl ItemsSource="{Binding Projects}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <toolkit:WrapPanel Width="480" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <toolkit:HubTile
+                        Margin="5 5 5 5"
+                        Title="{Binding Key}"
+                        Message="{Binding Name}"
+                        Source="/Images/projectavatar.png">
+                    </toolkit:HubTile>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+</UserControl>

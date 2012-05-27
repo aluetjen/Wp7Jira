@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using Aluetjen.Infrastructure;
 using Aluetjen.Jira.Contexts.Review.Query;
 using Aluetjen.Jira.Contexts.Review.ViewModel;
@@ -14,10 +15,18 @@ namespace Aluetjen.Jira.Contexts.Review.Mvvm
         {
             InitializeComponent();
 
-            var dataContext = Config.Container.Resolve<AllIssuesViewModel>();
-            dataContext.Load();
+            this.Loaded += new System.Windows.RoutedEventHandler(IssueListControl_Loaded);
+        }
 
-            DataContext = dataContext;
+        void IssueListControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (!DesignerProperties.IsInDesignTool)
+            {
+                var dataContext = Config.Container.Resolve<AllIssuesViewModel>();
+                dataContext.Load();
+
+                DataContext = dataContext;
+            }
         }
 
         private void IssueListBox_Tap(object sender, GestureEventArgs e)

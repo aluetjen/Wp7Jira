@@ -1,0 +1,10 @@
+﻿<ViewModel:AllProjectsViewModel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ViewModel="clr-namespace:Aluetjen.Jira.Contexts.Import.ViewModel;assembly=Aluetjen.Jira.Contexts">
+    <ViewModel:AllProjectsViewModel.Projects>
+        <ViewModel:Project Id="1234" Key="DE" Name="Int Germany" Self="" />
+        <ViewModel:Project Id="1235" Key="UK" Name="Int UK" Self="" />
+        <ViewModel:Project Id="1236" Key="LIVE" Name="Production Support" Self="" />
+        <ViewModel:Project Id="1236" Key="HLP" Name="Help Desk" Self="" />
+    </ViewModel:AllProjectsViewModel.Projects>
+</ViewModel:AllProjectsViewModel>

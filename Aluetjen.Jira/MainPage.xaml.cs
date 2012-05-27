@@ -28,14 +28,14 @@ namespace Aluetjen.Jira
         {
             InitializeComponent();
 
-            Bus = Config.Container.Resolve<IBus>();
-
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
 
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            Bus = Config.Container.Resolve<IBus>();
+
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
