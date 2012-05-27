@@ -53,9 +53,9 @@ namespace Aluetjen.Jira.Contexts.Review.Query
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
+            if(PropertyChanged != null)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() => PropertyChanged(this, new PropertyChangedEventArgs(propertyName)));
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

@@ -4,7 +4,7 @@ using Aluetjen.Jira.Contexts.Review.Query;
 
 namespace Aluetjen.Jira.Contexts.Review.ViewModel
 {
-    public class IssueIssueUpdatedHandler : IHandleMessages<IssueUpdatedEvent>
+    public class IssueIssueUpdatedHandler : IHandleUiMessage<IssueUpdatedEvent>
     {
         public IDocumentStore Store { get; set; }
 

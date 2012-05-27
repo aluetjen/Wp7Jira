@@ -9,7 +9,7 @@ using Aluetjen.Jira.Contexts.Review.Query;
 
 namespace Aluetjen.Jira.Contexts.Review.ViewModel
 {
-    public class AllIssuesViewModel : IHandleMessages<IssueUpdatedEvent>, INotifyPropertyChanged
+    public class AllIssuesViewModel : IHandleUiMessage<IssueUpdatedEvent>, INotifyPropertyChanged
     {
         public IDocumentStore Store { get; set; }
 
@@ -22,23 +22,22 @@ namespace Aluetjen.Jira.Contexts.Review.ViewModel
         public ObservableCollection<Issue> Issues
         {
             get { return _issues; }
-            set
-            {
-                _issues = value;
-                NotifyPropertyChanged("Issues");
-            }
+            set { _issues = value; }
         }
 
         public void Load()
         {
-            Issues = new ObservableCollection<Issue>(Store.LoadAll<Issue>());
+            foreach (var issue in Store.LoadAll<Issue>())
+            {
+                Issues.Add(issue);
+            }
         }
 
         public void Handle(IssueUpdatedEvent message)
         {
             var updatedIssue = Issues.FirstOrDefault(i => i.Key == message.Key);
 
-            if(updatedIssue != null)
+            if (updatedIssue != null)
             {
                 updatedIssue.Summary = message.Summary;
             }
@@ -54,7 +53,7 @@ namespace Aluetjen.Jira.Contexts.Review.ViewModel
         {
             if (PropertyChanged != null)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() => PropertyChanged(this, new PropertyChangedEventArgs(propertyName)));
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

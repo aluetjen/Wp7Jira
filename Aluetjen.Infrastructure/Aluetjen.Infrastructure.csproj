@@ -63,6 +63,7 @@
     <Compile Include="ConcurrencyException.cs" />
     <Compile Include="DocumentStore.cs" />
     <Compile Include="Handler.cs" />
+    <Compile Include="IHandleUiMessage.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

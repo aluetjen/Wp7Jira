@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Windows;
 using Funq;
 
 namespace Aluetjen.Infrastructure
@@ -24,11 +25,7 @@ namespace Aluetjen.Infrastructure
             Action<TMessage> handlerLamda;
             if (!_handlerFactory.TryGetValue(typeof(TMessage), out handlerAction))
             {
-                handlerLamda = m =>
-                                   {
-                                       var handler = handlerFactory();
-                                       handler.Handle(m);
-                                   };
+                handlerLamda = m => InstanciateAndCall(m, handlerFactory);
             }
             else
             {
@@ -36,12 +33,25 @@ namespace Aluetjen.Infrastructure
                                    {
                                        ((Action<TMessage>)handlerAction)(m);
 
-                                       var handler = handlerFactory();
-                                       handler.Handle(m);
+                                       InstanciateAndCall(m, handlerFactory);
                                    };
             }
 
             _handlerFactory[typeof(TMessage)] = handlerLamda;
+        }
+
+        private static void InstanciateAndCall<T, TMessage>(TMessage m, Func<T> handlerFactory) where T : IHandleMessages<TMessage>
+        {
+            var handler = handlerFactory();
+
+            if (typeof (IHandleUiMessage<TMessage>).IsAssignableFrom(typeof (T)))
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() => handler.Handle(m));
+            }
+            else
+            {
+                handler.Handle(m);
+            }
         }
 
         public void Publish<T>(T message) where T : Message

@@ -14,7 +14,7 @@ namespace Aluetjen.Jira.Contexts.Review.Mvvm
         {
             InitializeComponent();
 
-            var dataContext = new AllIssuesViewModel { Store = Config.Container.Resolve<IDocumentStore>() };
+            var dataContext = Config.Container.Resolve<AllIssuesViewModel>();
             dataContext.Load();
 
             DataContext = dataContext;
